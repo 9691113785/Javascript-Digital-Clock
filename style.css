@@ -198,11 +198,11 @@ font-size: 0.8em;
 
     #hours, #minutes, #second{
        
-       padding: 10px;
+       padding: 8px;
     }
     #session{
       
-        padding: 10px;
+        padding: 8px;
       
     
     }
@@ -251,6 +251,24 @@ font-size: 0.8em;
         
     }
 
+    
+}
+@media only screen and (min-width:806px) and (max-width:1380px) {
+    #session{
+      
+        padding: 5px;
+      
+    
+    }
+    #hours, #minutes, #second{
+       
+        padding: 5px;
+     }
+    .big-time{
+       
+        font-size: 1.3em;
+    
+    }
     
 }
 
