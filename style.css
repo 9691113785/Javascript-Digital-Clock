@@ -134,6 +134,7 @@ font-size: 0.8em;
     padding: 10px;
     position: relative;
     top: 30px;
+    font-size: 1.8em;
     
     
 }
@@ -154,7 +155,7 @@ font-size: 0.8em;
 
 
 .big-time span{
-    font-size: 2em;
+   
     font-weight: bold;
 }
 
@@ -179,6 +180,7 @@ font-size: 0.8em;
 .image-div{
     width: 100%;
     background-color: white;
+    
     border-radius: 10px;
     margin: 25px 0px;
 
@@ -193,7 +195,25 @@ font-size: 0.8em;
     .grab{
         height: 73px;
     }
+
+    #hours, #minutes, #second{
+       
+       padding: 10px;
+    }
+    #session{
+      
+        padding: 10px;
+      
+    
+    }
+    .big-time{
+       
+        font-size: 1.1em;
+        
+        
+    }
 }
+
 @media only screen and (max-width:419px) {
     .grid-container{
         display: block;
@@ -214,6 +234,23 @@ font-size: 0.8em;
         margin: 2px 6px;
         align-items: center;
     }
+    #hours, #minutes, #second{
+       
+        padding: 10px;
+     }
+     #session{
+       
+         padding: 10px;
+       
+     
+     }
+     .big-time{
+       
+        font-size: 0.6em;
+        
+        
+    }
+
     
 }
 

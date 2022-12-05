@@ -1,16 +1,19 @@
 
-
+var sess = ""
 const settime = () => {
     const d = new Date()
     h = d.getHours()
     m = d.getMinutes()
     s = d.getSeconds()
-    sess = document.getElementById('session')
+   
+
+
+    
     if (h >= 12) {
-        sess.innerText = 'PM'
+        sess = 'PM'
     }
     else {
-        sess.innerText = 'AM'
+        sess = 'AM'
     }
 
     if (h > 12) {
@@ -21,6 +24,7 @@ const settime = () => {
     document.getElementById('hours').innerText = h
     document.getElementById('minutes').innerText = m
     document.getElementById('second').innerText = s
+    document.querySelector('#session').innerText = sess
 
 }
 settime();
@@ -46,37 +50,42 @@ document.querySelector('.set').addEventListener('click', (e) => {
     var splitnap = napvalue.toString().split(" ")
     var splitnight = nightvalue.toString().split(" ")
 
- 
+    console.log(splitwakeup);
 
-    if( splitwakeup[0] === splitlunch[0] === splitnap[0] === splitnight[0] === h){
+ console.log(`this is ${h}`, `this is ${sess}`);
+
+    if( splitwakeup[0] === splitlunch[0] === splitnap[0] === splitnight[0] === (h + sess)){
         document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/welcome.jpeg" alt="">'
         document.querySelector('.good-morning').innerText = 'New'
         document.querySelector('.grab').innerText = 'New'
 
     }
+    
 
-    else if(splitwakeup[0] === (h)){
-        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/Component 30 .svg" alt="">'
+    else if((splitwakeup[0] === (h + sess))){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/morning.jpg" alt="">'
         document.querySelector('.good-morning').innerText = 'GOOD MORNING  !! WAKE UP  !!   .'
         document.querySelector('.grab').innerText = 'GRAB SOME HEALTHY BREAKFAST    !!!.'
 
+        
+
     }
-    else if(splitlunch[0] === (h)){
-        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/lunch_time.svg" alt="">'
+    else if(splitlunch[0] === (h + sess)){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/lunch.jpg" alt="">'
         document.querySelector('.good-morning').innerText = 'GOOD AFTERNOON !! TAKE SOME SLEEP   !!!!!. '
         document.querySelector('.grab').innerText = "LET'S HAVE SOME LUNCH     !!. "
 
     }
 
-    else if(splitnap[0] === (h)){
-        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/nap_time.svg" alt="">'
+    else if(splitnap[0] === (h + sess)){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/evening.jpg" alt="">'
         document.querySelector('.good-morning').innerText = 'GOOD EVENING    !!'
         document.querySelector('.grab').innerText = 'STOP YAWNING, GET SOME TEA.. ITS JUST EVENING  !!! '
 
     }
 
-    else if(splitnight[0] === (h)){
-        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/Component 32 .jpg" alt="">'
+    else if(splitnight[0] === (h + sess)){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/night.jpg" alt="">'
         document.querySelector('.good-morning').innerText = 'GOOD NIGHT   !!  ..'
         document.querySelector('.grab').innerText = 'CLOSE YOUR EYES AND GO TO SLEEP !!!!!.'
 
@@ -99,7 +108,7 @@ document.querySelector('.set').addEventListener('mouseleave', () => {
 
 
 
-console.log(wakeupvalue);
+
 
 
 
