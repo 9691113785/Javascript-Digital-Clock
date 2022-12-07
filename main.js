@@ -31,6 +31,39 @@ settime();
 setInterval(settime, 1000)
 
 
+// time for mobile
+var sessii = ""
+const settime1 = () => {
+    const d = new Date()
+    hr = d.getHours()
+    mi = d.getMinutes()
+    se = d.getSeconds()
+   
+
+
+    
+    if (hr >= 12) {
+        sessii = 'PM'
+    }
+    else {
+        sessii = 'AM'
+    }
+
+    if (hr > 12) {
+        hr = hr - 12
+    }
+
+
+    document.getElementById('hour').innerText = hr
+    document.getElementById('minute').innerText = mi
+    document.getElementById('sec').innerText = se
+    document.querySelector('#sessi').innerText = sessii
+
+}
+settime1();
+setInterval(settime1, 1000)
+
+
 document.querySelector('.set').addEventListener('click', (e) => {
     e.preventDefault()
     document.querySelector('.set').innerText = 'Party Time!'
@@ -60,7 +93,6 @@ document.querySelector('.set').addEventListener('click', (e) => {
         document.querySelector('.grab').innerText = 'New'
 
     }
-    
 
     else if((splitwakeup[0] === (h + sess))){
         document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/morning.jpg" alt="">'
@@ -95,15 +127,16 @@ document.querySelector('.set').addEventListener('click', (e) => {
 
 
     
-
-
 })
+
 document.querySelector('.set').addEventListener('mouseleave', () => {
     document.querySelector('.set').innerText = 'Set Alarm!'
 
 
 
 })
+
+
 
 
 

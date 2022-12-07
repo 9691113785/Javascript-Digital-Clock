@@ -373,16 +373,16 @@ select {
         top: 0px;
     }
 
-    #hours,
-    #minutes,
-    #second {
+    #hour,
+    #minute,
+    #sec {
         background-color: #EDEDED;
         padding: 5px;
         border-radius: 5px;
         margin: 1px;
     }
 
-    #session {
+    #sessi {
         background-color: #B85EBF;
         padding: 5px;
         border-radius: 5px;
