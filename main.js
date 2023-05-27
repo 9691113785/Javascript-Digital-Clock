@@ -71,6 +71,7 @@ document.querySelector('.set').addEventListener('click', (e) => {
     var lunchvalue = document.querySelector('#lunch').value
     var napvalue = document.querySelector('#nap').value
     var nightvalue = document.querySelector('#night').value
+    console.log(wakeupvalue);
     
     document.querySelector('#waketext').innerText = `Wakeup Time is : ` + wakeupvalue
     document.querySelector('#lunchtext').innerText = "Lunch Up Time is : " + lunchvalue;
@@ -87,8 +88,22 @@ document.querySelector('.set').addEventListener('click', (e) => {
 
  console.log(`this is ${h}`, `this is ${sess}`);
 
-    if( splitwakeup[0] === splitlunch[0] === splitnap[0] === splitnight[0] === (h + sess)){
-        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/welcome.jpeg" alt="">'
+    // if( splitwakeup[0] === splitlunch[0] === splitnap[0] === splitnight[0] === (h + sess)){
+    //     document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/welcome.jpeg" alt="">'
+    //     document.querySelector('.good-morning').innerText = 'New'
+    //     document.querySelector('.grab').innerText = 'New'
+
+    // }
+    if( splitnight[0] === splitnap[0] === splitlunch[0] === splitwakeup[0] === (h + sess)){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/night.jpg" alt="">'
+        document.querySelector('.good-morning').innerText = 'New'
+        document.querySelector('.grab').innerText = 'New'
+
+    }
+    
+
+    else if( splitwakeup[0] === splitlunch[0] === (h + sess)){
+        document.querySelector('.image-div').innerHTML = '<img class="image-div" src="./assests/lunch.jpg" alt="">'
         document.querySelector('.good-morning').innerText = 'New'
         document.querySelector('.grab').innerText = 'New'
 
