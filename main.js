@@ -65,7 +65,8 @@ setInterval(settime1, 1000)
 
 
 document.querySelector('.set').addEventListener('click', (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    document.querySelector('#neww').style.display='block'
     document.querySelector('.set').innerText = 'Party Time!'
     var wakeupvalue = document.querySelector('#wakeUp').value
     var lunchvalue = document.querySelector('#lunch').value
